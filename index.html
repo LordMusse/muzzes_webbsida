@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muzzes">
+    <title>Muzzes</title>
+    <style>
+        :root {
+            --pcb-bg: #051a05;
+            --pcb-light: #0a2f0a;
+            --pcb-trace: #28a745;
+
+            --lightning-yellow: #ffeb3b;
+            --highlight-text: #fff176;
+
+            --text-main: #c5ffc5; /* Lite gulgrön för läsbarhet */
+            --text-dim: #6b8f6b;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace; /* Kod-stil som påminner om terminal/IDE */
+            line-height: 1.6;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--pcb-bg);
+            /* Enkelt mönster som efterliknar kretskortsspår via CSS gradients */
+            background-image: 
+                radial-gradient(circle at 10% 20%, var(--pcb-light) 2px, transparent 2.5px),
+                radial-gradient(circle at 90% 80%, var(--pcb-light) 2px, transparent 2.5px),
+                linear-gradient(45deg, transparent 48%, var(--pcb-light) 49%, var(--pcb-light) 51%, transparent 52%);
+            background-size: 100% 100%, 100% 100%, 200px 200px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(5, 26, 5, 0.9); /* Halvtransparent mörkgrön */
+            border: 2px solid var(--pcb-trace);
+            box-shadow: 0 0 20px rgba(40, 167, 69, 0.2); /* Grön glow */
+            border-radius: 4px; /* Måttliga hörn som en komponent */
+            text-align: center;
+            position: relative;
+        }
+
+        .container::before, .container::after {
+            content: '+';
+            position: absolute;
+            color: var(--pcb-trace);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .container::before { top: 10px; left: 10px; }
+        .container::after { bottom: 10px; right: 10px; }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--lightning-yellow);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 40px;
+            color: var(--lightning-yellow);
+            text-transform: uppercase;
+        }
+
+        p {
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: var(--lightning-yellow);
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--lightning-yellow);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--pcb-trace);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: var(--lightning-yellow);
+            color: var(--pcb-bg);
+            border-bottom: none;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--pcb-trace);
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            border-top: 1px solid #111;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Muzzes</h1>
+            <p>&lt; Analog elektronik &bull; Programmering &bull; 3D-modelering /&gt;</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Vem är jag?</h2>
+                <p>
+                  Mitt namn är Rasmus Feltzing och jag är en Elektroingenjör och Maker med livslångt intresse för teknik och problemlösning. Finns det ett problem vill jag lösa det, finns det ett verktyg vill jag lära mig det och finns det inte ett verktyg så bygger jag det.
+                </p>
+            </section>
+
+            <section>
+                <h2>Mål</h2>
+                <p>
+                   Att samla på mig färdigheten av teknikens motsvarighet till en polyglott. Att sträva mot disciplinär mångfald och exempelvis kunna navigera analog elektronik genom ögonen av mekanik. Att kunna brygga kunskapen mellan olika fält och förstå ett systems helhet. 
+                </p>
+                <h3>Kommande fält att navigera</h3>
+                Kemi<br>
+                Aukustik<br>
+                Mekanik
+            </section>
+
+            <section>
+                <h2>Projekt</h2>
+                <p>
+                    <strong>01. Åmåls Thaiboxningsklubb</strong><br>
+                    Ordförande och tränare i Thaiboxning för <a href="https://AmalsThai.se">Åmåls Thaiboxningsklubb.</a>
+                </p>
+                <br>
+                <p>
+                    <strong>02. Bengtsfors Folkdansgille</strong><br>
+                    Ordförande och dansledare i folkdans för <a href="https://folkdansgille.se">Bengtsfors Folkdansgille.</a>
+                </p>
+            </section>
+
+            <section class="contact-info">
+                <h2>Kontakt och medier</h2>
+                <p>
+                    <strong>E-post:</strong> <a href="mailto:rasmus@feltzing.se">rasmus@feltzing.se</a>
+                </p>
+                <p>
+                    <strong>GitHub:</strong> <a href="https://github.com/LordMusse">LordMusse</a>
+                </p>
+                <p>
+                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/feltzing/">feltzing</a>
+                </p>
+
+                <p>
+                <strong>Adress:</strong><br>
+                Berghagsvägen 9B<br>
+                666 40 Skåpafors
+                </p>
+
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        &copy; 2026 Muzzes.
+    </footer>
+
+</body>
+</html>
+
